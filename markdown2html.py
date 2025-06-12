@@ -1,19 +1,19 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 import sys
 import os
 
-# Check number of arguments
+# Check if exactly 2 arguments are given (script name doesn't count)
 if len(sys.argv) < 3:
     print("Usage: ./markdown2html.py README.md README.html", file=sys.stderr)
-    exit(1)
+    sys.exit(1)
 
 input_file = sys.argv[1]
 output_file = sys.argv[2]
 
-# Check if the input file exists
-if not os.path.isfile(input_file):
+# Check if input file exists
+if not os.path.exists(input_file):
     print(f"Missing {input_file}", file=sys.stderr)
-    exit(1)
+    sys.exit(1)
 
-# If all good, just exit 0 (no output required)
-exit(0)
+# If everything is fine, exit successfully
+sys.exit(0)
